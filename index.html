@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BASIC</title>
+</head>
+<body>
+	<!-- <button class="clickbtn" onclick="addImage();">Click me, may premyo ka</button> -->
+
+	<div id="content-div" onclick="clickAction2()">
+		<button id="clickbtn" onclick="clickAction(this);">Click Here for Surprise</button>	
+	</div>
+
+	<p id="keys"></p>
+
+	<div id="sadako"></div>
+
+	<script>
+		document.addEventListener("keydown", function(press){
+			document.getElementById("keys").innerText += press.key;
+			console.log(press)
+		})
+
+		window.addEventListener("scroll", function (scroll) {
+			console.log(scroll)
+		})
+
+		// setTimeout(sadako, 5000)
+
+		// setInterval(function () {
+		// 	document.getElementById("keys").innerHTML += "Hello"
+		// }, 1000);
+
+		function sadako(){
+			document.getElementById("sadako").innerHTML = '<img src="sadako.png">'
+		}
+
+		function clickAction2() {
+			this.stopPropagation();
+
+			document.getElementById("content-div").innerHTML = "Surpriseeee!!!!!!"
+		}
+
+		function clickAction(){
+			// document.getElementById("content-div").innerHTML = "Surpriseeee!!!!!!"
+			document.body.style.backgroundColor = "red";
+		}
+	</script>
+</body>
+</html>
